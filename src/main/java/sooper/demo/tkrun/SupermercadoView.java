@@ -24,7 +24,6 @@ public class SupermercadoView {
 	private SupermercadoController controller;
 	private DefaultTableModel modeloArticulo;
 	private DefaultTableModel modeloListaEmbolsados;
-
 	
 
 	 public SupermercadoView(SupermercadoController controlador) {
@@ -91,7 +90,15 @@ public class SupermercadoView {
 		tablaEmbolsados.setModel(modeloListaEmbolsados);
 		scrollPane_1.setViewportView(tablaEmbolsados);
 		
+		
 		btnEnvioAlmacen = new JButton("Enviar a almacén");
+		btnEnvioAlmacen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AlmacenView almacen =new AlmacenView();
+			}
+		});
+		
+		
 		frmSupermercado.getContentPane().add(btnEnvioAlmacen, "cell 0 5");
 		frmSupermercado.setVisible(true);
 	}
